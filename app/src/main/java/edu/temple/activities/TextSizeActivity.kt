@@ -25,10 +25,7 @@ class TextSizeActivity : AppCompatActivity() {
 
             // TODO Step 2: Pass selected value back to activity that launched TextSizeActivity
             adapter = TextSizeAdapter(textSizes){ selectedSize ->
-                val intent = Intent(this@TextSizeActivity, DisplayActivity::class.java).apply {
-                    //putExtra(message, selectedSize)
-                    setResult(RESULT_OK, Intent().putExtra(message, selectedSize))
-                }
+                setResult(RESULT_OK, Intent().putExtra(message, selectedSize))
                 finish()
             }
             layoutManager = LinearLayoutManager(this@TextSizeActivity)
